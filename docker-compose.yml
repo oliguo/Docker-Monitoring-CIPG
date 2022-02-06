@@ -9,9 +9,9 @@ services:
     restart: always
     environment:
       - PRE_CREATE_DB=cadvisor 
-    ports:
-     - "8083:8083"
-     - "8086:8086"
+    #ports:
+    # - "8083:8083"
+    # - "8086:8086"
     volumes:
       - ./data/influxdb:/data 
   cadvisor:
@@ -21,8 +21,8 @@ services:
       - influxdb:influxsrv
     command: -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086
     restart: always
-    ports:
-     - "8080:8080"
+    #ports:
+    # - "8080:8080"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -31,8 +31,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro 
   prometheus:
     image: prom/prometheus
-    ports:
-      - 9090:9090
+    restart: always
+    #ports:
+    #  - 9090:9090
     links:
       - cadvisor:cadvisor
     volumes:
