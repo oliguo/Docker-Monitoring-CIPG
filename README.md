@@ -3,6 +3,7 @@ Simplify Monitoring the Docker Container by Cadvisor, Influxdb, Prometheus and G
 
 # Default Info
 ```
+localhost:3000
 grafana login: admin / admin
 ```
 
