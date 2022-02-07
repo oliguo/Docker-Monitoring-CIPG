@@ -1,6 +1,11 @@
 # Docker-Monitoring-CIPG
 Simplify Monitoring the Docker Container by Cadvisor, Influxdb, Prometheus and Grafana
 
+# step
+```
+docker-compose up -d
+```
+
 # Default Info
 ```
 localhost:3000
