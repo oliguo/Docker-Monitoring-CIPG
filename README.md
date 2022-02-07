@@ -1,9 +1,14 @@
 # Docker-Monitoring-CIPG
 Simplify Monitoring the Docker Container by Cadvisor, Influxdb, Prometheus and Grafana
 
-# step
+# Step
 ```
 docker-compose up -d
+
+Reset and Remove:
+docker-compose down
+rm -rf ./data
+docker volume rm $(docker volume ls | grep grafana_data | awk '{print $2}')
 ```
 
 # Default Info
